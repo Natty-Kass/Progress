@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Academy Registration</title>
+    <link rel="icon" href="/images/favicon.jpg" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid #007bff;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .col-half {
+            width: 47%; 
+        }
+
+        #AgeDisplay {
+            margin-bottom: 17px;
+        }
+
+        #ageDisplay {
+            padding: 13px 156px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            color: #333;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        padding: 20px;
+    }
+
+    .col-half {
+        width: 48%;
+    }
+
+    #ageDisplay {
+        padding: 13px 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .col-half {
+        width: 100%;
+    }
+
+    #ageDisplay {
+        padding: 13px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 22px;
+    }
+
+    input, select, textarea {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    #ageDisplay {
+        padding: 13px 10px;
+    }
+}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Progress Academy Registration</h1>
+    <form id="registrationForm" action="/register/elementary" method="post" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-half">
+                <label for="studentType">New or Existing Student</label>
+                <select id="studentType" name="studentType" required onchange="toggleFields()">
+                    <option value="">Select...</option>
+                    <option value="New">New</option>
+                    <option value="Existing">Existing</option>
+                </select>
+            </div>
+            <div class="col-half">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Student Name" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-half">
+                <label for="middleName">Middle Name</label>
+                <input type="text" id="middleName" name="middleName" placeholder="Father Name" required>
+            </div>
+            <div class="col-half">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Grandfather Name" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-half">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required onchange="calculateAge()">
+            </div>
+            <div class="col-half">
+                <label for="ageDisplay" id="AgeDisplay">Age</label>
+                <span id="ageDisplay"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-half">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select...</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div class="col-half">
+                <label for="birthCertificate">Birth Certificate</label>
+                <input type="file" id="birthCertificate" name="birthCertificate" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-half">
+                <label for="studentPhoto">Student Photo (600x600px)</label>
+                <input type="file" id="studentPhoto" name="studentPhoto" accept="image/*" required>
+            </div>
+            <div class="col-half">
+                <div id="previousSchoolSection" class="hidden">
+                <label for="previousSchool">Previous School Certificate</label>
+                <input type="file" id="previousSchool" name="previousSchool">
+                </div>
+            </div>
+        </div>
+        <div class="col-half">
+            <label for="grade">Grade Level</label>
+            <select id="grade" name="grade" required onchange="toggleDepartment()">
+                <option value="">Select...</option>
+                <option value="1">Grade 1</option>
+                    <option value="2">Grade 2</option>
+                    <option value="3">Grade 3</option>
+                    <option value="4">Grade 4</option>
+                    <option value="5">Grade 5</option>
+                    <option value="6">Grade 6</option>
+                    <option value="7">Grade 7</option>
+                    <option value="8">Grade 8</option>
+            </select>
+        </div>
+        <div class="row">
+            <div class="col-half">
+                <label for="fatherPhone">Father's Phone Number</label>
+                <input type="tel" id="fatherPhone" name="fatherPhone" placeholder="+251912345678" required>
+            </div>
+            <div class="col-half">
+                <label for="motherPhone">Mother's Phone Number</label>
+                <input type="tel" id="motherPhone" name="motherPhone" placeholder="+251912345678" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-half">
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" placeholder="Burayu Keta" required>
+            </div>
+            <div class="col-half">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="example@example.com" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-half">
+                <label for="emergencyContact">Emergency Contact Name</label>
+                <input type="text" id="emergencyContact" name="emergencyContact" placeholder="Emergency Contact Person Name" required>
+            </div>
+            <div class="col-half">
+                <label for="emergencyPhone">Emergency Contact Phone Number</label>
+                <input type="tel" id="emergencyPhone" name="emergencyPhone" placeholder="+251912345678" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-half">
+                    <label for="contactMethod">Preferred Contact Method</label>
+                <select id="contactMethod" name="contactMethod" required onchange="toggleContactMethod()">
+                    <option value="">Select...</option>
+                    <option value="Telegram">Telegram</option>
+                    <option value="Phone">Phone Call</option>
+                    <option value="Email">Email</option>
+                </select>
+            </div>
+            <div class="col-half">
+                <div id="telegramSection" class="hidden">
+                    <label for="telegramUsername">Telegram Username</label>
+                    <input type="text" id="telegramUsername" name="telegramUsername" placeholder="@username" >
+                </div>
+                <div id="phoneSection" class="hidden">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+251912345678" >
+                </div>
+                <div id="emailSection" class="hidden">
+                    <label for="contactEmail">Email Address</label>
+                    <input type="email" id="contactEmail" name="contactEmail" placeholder="example@example.com" >
+                </div>
+            </div>
+        </div>
+
+
+        <label for="healthStatus">Health Status</label>
+        <textarea id="healthStatus" name="healthStatus" rows="4" required></textarea>
+
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+<script>
+    function toggleFields() {
+        const studentType = document.getElementById('studentType').value;
+        const previousSchoolSection = document.getElementById('previousSchoolSection');
+        previousSchoolSection.classList.toggle('hidden', studentType !== 'New');
+    }
+
+    function toggleContactMethod() {
+        const contactMethod = document.getElementById('contactMethod').value;
+        const telegramSection = document.getElementById('telegramSection');
+        const phoneSection = document.getElementById('phoneSection');
+        const emailSection = document.getElementById('emailSection');
+
+        telegramSection.classList.toggle('hidden', contactMethod !== 'Telegram');
+        phoneSection.classList.toggle('hidden', contactMethod !== 'Phone');
+        emailSection.classList.toggle('hidden', contactMethod !== 'Email');
+
+        if (contactMethod === 'Phone') {
+            document.getElementById('phoneNumber').value = document.getElementById('motherPhone').value;
+        }
+    }
+    function calculateAge() {
+        const dob = document.getElementById('dob').value;
+        if (dob) {
+            const dobDate = new Date(dob);
+            const today = new Date();
+            let age = today.getFullYear() - dobDate.getFullYear();
+            const monthDiff = today.getMonth() - dobDate.getMonth();
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dobDate.getDate())) {
+                age--;
+            }
+            document.getElementById('ageDisplay').textContent = age + " years";
+        } else {
+            document.getElementById('ageDisplay').textContent = '';
+        }
+    }
+</script>
+
+
+
+        
+    
+</body>
+</html>

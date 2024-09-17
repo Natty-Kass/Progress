@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Successful</title>
+    <link rel="icon" href="/images/favicon.jpg" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #d0eafc, #e6ffe6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+        .message-container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
+            animation: fadeIn 1s ease-out;
+        }
+        h1 {
+            color: #4CAF50;
+            font-size: 40px;
+            margin-bottom: 20px;
+            font-family: 'Roboto', sans-serif;
+        }
+        p {
+            color: #333;
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-family: 'Arial', sans-serif;
+        }
+        a {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        a:hover {
+            background-color: #388e3c;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Responsive Design */
+@media (max-width: 1920px) {
+    .message-container {
+        max-width: 70%;
+        padding: 30px;
+    }
+}
+
+@media (max-width: 1536px) {
+    .message-container {
+        max-width: 80%;
+        padding: 30px;
+    }
+}
+
+@media (max-width: 1366px) {
+    .message-container {
+        max-width: 85%;
+        padding: 25px;
+    }
+}
+
+@media (max-width: 1080px) {
+    .message-container {
+        max-width: 90%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 844px) {
+    .message-container {
+        max-width: 95%;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 800px) {
+    .message-container {
+        max-width: 95%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 390px) {
+    .message-container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="message-container" aria-live="polite">
+        <h1>Registration Successful!</h1>
+        <p>You have successfully registered. Thank you!</p>
+        <a href="/">Go to Homepage</a>
+    </div>
+</body>
+</html>

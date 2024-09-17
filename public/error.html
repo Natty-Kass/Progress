@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Failed</title>
+    <link rel="icon" href="/images/favicon.jpg" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .message-container {
+            text-align: center;
+            background-color: #ffe6e6;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #dc3545;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #721c24;
+            font-size: 18px;
+            margin-top: 0;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #dc3545;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        a:hover {
+            background-color: #c82333;
+        }
+        /* Responsive Design */
+@media (max-width: 768px) {
+    .message-container {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    a {
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .message-container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    a {
+        padding: 6px 12px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="message-container">
+        <h1>Registration Failed</h1>
+        <p>Something went wrong. Please try again later.</p>
+        <a href="/">Go to Homepage</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Registration</title>
+    <link rel="icon" href="/images/favicon.jpg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+       /* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+/* Choose Registration Section */
+.choose-registration {
+    background: linear-gradient(135deg, #007bff 0%, #00c6ff 100%);
+    padding: 100px 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.choose-registration .container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 60px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.choose-registration h2 {
+    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+.registration-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.registration-container {
+    width: 45%;
+    text-align: center;
+}
+
+.registration-btn {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(135deg, #007bff, #00c6ff);
+    color: #fff;
+    text-align: center;
+    border-radius: 12px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.4s, box-shadow 0.4s;
+    box-shadow: 0 6px 18px rgba(0, 123, 255, 0.3);
+    margin-bottom: 20px;
+}
+
+.registration-btn:hover {
+    background-color: #0056b3;
+    box-shadow: 0 12px 30px rgba(0, 123, 255, 0.6);
+    transform: translateY(-5px);
+}
+
+/* Pricing Container */
+.pricing-container {
+    background-color: #f9fafb;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.pricing-container:hover {
+    transform: scale(1.05);
+}
+
+.pricing-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    color: #333;
+}
+
+.pricing-container li span i {
+    margin-right: 3px;
+    color: #007bff;
+}
+
+.pricing-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.pricing-container li {
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pricing-container li span {
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #007bff;
+}
+
+.price-icon {
+    background-color: #007bff;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .registration-section {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .registration-container {
+        width: 100%;
+    }
+}
+
+/* For screens 1920px wide (larger desktops) */
+@media (min-width: 1920px) {
+    .choose-registration {
+        padding: 120px 40px;
+    }
+
+    .choose-registration h2 {
+        font-size: 3.5rem;
+    }
+
+    .registration-btn {
+        font-size: 1.6rem;
+        padding: 25px;
+    }
+}
+
+/* For screens 1366px wide (medium desktops) */
+@media (min-width: 1366px) and (max-width: 1919px) {
+    .choose-registration {
+        padding: 100px 30px;
+    }
+
+    .choose-registration h2 {
+        font-size: 3rem;
+    }
+
+    .registration-btn {
+        font-size: 1.4rem;
+        padding: 20px;
+    }
+}
+
+/* For screens 1536px wide (larger desktops) */
+@media (min-width: 1536px) and (max-width: 1919px) {
+    .choose-registration {
+        padding: 110px 35px;
+    }
+
+    .choose-registration h2 {
+        font-size: 3.2rem;
+    }
+
+    .registration-btn {
+        font-size: 1.5rem;
+        padding: 22px;
+    }
+}
+
+/* For screens 360x800px wide (small mobile devices) */
+@media (max-width: 360px) {
+    .choose-registration {
+        padding: 60px 10px;
+    }
+
+    .choose-registration h2 {
+        font-size: 1.8rem;
+    }
+
+    .registration-btn {
+        font-size: 1.2rem;
+        padding: 15px;
+    }
+
+    .pricing-container {
+        font-size: 1rem;
+    }
+}
+
+/* For screens 390x844px wide (mobile devices) */
+@media (max-width: 390px) {
+    .choose-registration {
+        padding: 70px 15px;
+    }
+
+    .choose-registration h2 {
+        font-size: 2rem;
+    }
+
+    .registration-btn {
+        font-size: 1.3rem;
+        padding: 18px;
+    }
+
+    .pricing-container {
+        font-size: 1.05rem;
+    }
+}
+
+/* For screens 393x873px wide (mobile devices) */
+@media (max-width: 393px) {
+    .choose-registration {
+        padding: 75px 15px;
+    }
+
+    .choose-registration h2 {
+        font-size: 2.2rem;
+    }
+
+    .registration-btn {
+        font-size: 1.35rem;
+        padding: 19px;
+    }
+
+    .pricing-container {
+        font-size: 1.1rem;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Choose Registration Section -->
+    <section class="choose-registration">
+        <div class="container">
+            <h2>Choose Your Registration</h2>
+            <div class="registration-section">
+                <!-- Elementary School Section -->
+                <div class="registration-container">
+                    <a href="/choose/elementary" class="registration-btn">Elementary School Registration</a>
+                    <div class="pricing-container">
+                        <h3 class="pricing-title">Price for Each Grade</h3>
+                        <ul>
+                            <li>Grade 1: <span><i class="fas fa-dollar-sign"></i>1000</span></li>
+                            <li>Grade 2: <span><i class="fas fa-dollar-sign"></i>2000</span></li>
+                            <li>Grade 3: <span><i class="fas fa-dollar-sign"></i>3000</span></li>
+                            <li>Grade 4: <span><i class="fas fa-dollar-sign"></i>4000</span></li>
+                            <li>Grade 5: <span><i class="fas fa-dollar-sign"></i>5000</span></li>
+                            <li>Grade 6: <span><i class="fas fa-dollar-sign"></i>6000</span></li>
+                            <li>Grade 7: <span><i class="fas fa-dollar-sign"></i>7000</span></li>
+                            <li>Grade 8: <span><i class="fas fa-dollar-sign"></i>8000</span></li>
+                        </ul>                        
+                    </div>
+                </div>
+
+                <!-- High School Section -->
+                <div class="registration-container">
+                    <a href="/choose/highschool" class="registration-btn">High School Registration</a>
+                    <div class="pricing-container">
+                        <h3 class="pricing-title">Price for Each Grade</h3>
+                        <ul>
+                            <li>Grade 9: <span><i class="fas fa-dollar-sign"></i>7500</span></li>
+                            <li>Grade 10: <span><i class="fas fa-dollar-sign"></i>8000</span></li>
+                            <li>Grade 11: <span><i class="fas fa-dollar-sign"></i>8500</span></li>
+                            <li>Grade 12: <span><i class="fas fa-dollar-sign"></i>8000</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

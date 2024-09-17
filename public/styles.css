@@ -1,0 +1,652 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+/* Navbar Container */
+/* Navbar Container */
+.navbar {
+    display: flex;
+    position: sticky;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #004e92, #00c6ff);
+    background-color: #222; /* Darker background for better contrast */
+    padding: 10px 20px;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Navbar Left Section */
+.navbar-left {
+    display: flex;
+    align-items: center; /* Aligns logo and text vertically */
+}
+
+/* Navbar Logo */
+.logo {
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px; /* Adds space between logo and text */
+}
+
+/* Navbar Text */
+.navbar-left p {
+    color: #fff;
+    font-size: 36px; /* Slightly larger for emphasis */
+    font-family: 'Lora', serif; /* Elegant font */
+    font-weight: bold;
+    margin: 0; /* Remove default margin */
+}
+
+.navbar-right {
+    display: flex;
+    gap: 10px;
+}
+/* Navbar Links */
+.navbar-right a {
+    color: #f8f9fa; /* Light color for better readability */
+    text-decoration: none;
+    padding: 12px 20px; /* Increased padding for better spacing */
+    font-size: 18px; /* Larger font size for better readability */
+    font-family: 'Roboto', sans-serif; /* Modern, clean font */
+    font-weight: 500; /* Slightly bold for emphasis */
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+/* Navbar Links Hover */
+.navbar-right a:hover {
+    color: #f0ad4e; /* Light gold color on hover */
+    text-decoration: underline;
+    text-underline-position: under; /* Underline positioned beneath text */
+}
+
+/* Navbar Button */
+.navbar-right .button {
+    background-color: #007bff; /* Bright blue button */
+    color: #fff;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase; /* Uppercase text for button */
+    border: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Navbar Button Hover */
+.navbar-right .button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+}
+
+
+
+/* Hero section styles */
+.hero-section {
+    position: relative;
+    background-image: url('/images/833A0912.JPG'); /* Adjust the path as needed */
+    background-size: cover;
+    background-position: center;
+    height: 800px; /* Adjust the height as needed */
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    position: absolute; /* Position absolute to cover entire section */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Cover full height */
+    background: rgba(0, 0, 0, 0.178); /* Semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box; /* Ensure padding is included in width/height */
+}
+
+.hero-overlay h1 {
+    color: white;
+    font-size: 3.5rem; /* Larger font size for emphasis */
+    font-weight: 700; /* Bold weight for prominence */
+    margin: 0;
+    padding-bottom: 110px;
+    font-family: 'Poppins', sans-serif; /* Modern, clean font */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Enhanced text shadow for better contrast */
+}
+
+/*About section CSS*/
+#about {
+    background: linear-gradient(to bottom right, #1e3c72, #2a5298);
+}
+
+.center {
+    text-align: center;
+    padding: 30px;
+    font-weight: bold;
+    font-size: 50px;
+    text-decoration: underline;
+    color: #f5f5f5;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.col-left, .col-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.col-left p, .col-right p {
+    padding: 35px;
+    font-size: 25px;
+    color: #FFF;
+}
+
+.col-left img, .col-right img {
+    padding: 30px;
+    width: 600px;
+    border-radius: 60px;
+}
+
+/*Gallery Section*/
+
+#gallery {
+    background: linear-gradient(to bottom right, #e0f7fa, #80deea); /* Adjust gradient as desired */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#gallery h1 {
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.gallery-container div {
+    width: calc(33.333% - 20px);
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.gallery-container div:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.gallery-container div img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px 15px 0 0;
+}
+
+.gallery-container div p {
+    padding: 20px;
+    font-size: 1.1em;
+    color: #666;
+    font-weight: 400;
+    margin: 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+.gallery-button {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #007bff; /* Primary color or adjust as needed */
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.gallery-button:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+    transform: translateY(-4px);
+}
+
+
+/*Contact Us section*/
+
+/* Section Container */
+.contact-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;  /* Soft background color */
+}
+
+/* Section Title */
+.contact-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    color: #007bff; /* Brand color */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    text-decoration: underline #007bff;
+}
+
+/* Contact Container */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.get-in-touch,
+.send-message {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.get-in-touch h2,
+.send-message h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333;
+    border-bottom: 3px solid #007bff; /* Brand color underline */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.get-in-touch ul {
+    list-style: none;
+    padding: 0;
+}
+
+.get-in-touch li {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.get-in-touch span {
+    color: #007bff; /* Icon color */
+    margin-right: 10px;
+}
+
+/* Send Us a Message Form */
+.send-message form {
+    display: flex;
+    flex-direction: column;
+}
+
+.send-message input,
+.send-message textarea {
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+.send-message input:focus,
+.send-message textarea:focus {
+    border-color: #007bff; /* Brand color focus */
+}
+
+.send-message textarea {
+    height: 150px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.send-btn,
+.delete-btn {
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.send-btn {
+    background-color: #007bff;  /* Primary button color */
+    color: white;
+}
+
+.send-btn:hover {
+    background-color: #0056b3;
+}
+
+.delete-btn {
+    background-color: #ff4500; /* Delete button color */
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #cc3700;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+footer p a {
+    color: white;
+    text-decoration: underline;
+}
+
+
+
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 393px) {
+    /* Navbar adjustments */
+    body {
+        overflow-x: hidden;
+    }
+    img {
+        max-width: 100%; /* Images will never be wider than their container */
+        height: auto; /* Maintain aspect ratio */
+        display: block; /* Removes default inline spacing for images */
+    }
+    .navbar-links {
+        display: none;
+    }
+    .hamburger-menu {
+        display: block;
+    }
+    .navbar-logo {
+        font-size: 1.3rem;
+    }
+
+    /* Hero section adjustments */
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    /* About Us adjustments */
+    .about-container div p {
+        font-size: 0.9rem;
+    }
+    .gallery-container, .contact-container {
+        flex-direction: column;
+    }
+    
+    .container h1 {
+        font-size: 2rem;
+    }
+
+    /* Contact Us adjustments */
+    .get-in-touch h2,
+    .send-message h2 {
+        font-size: 1.4rem;
+    }
+    .send-message input,
+    .send-message textarea {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    img {
+        max-width: 100%; /* Images will never be wider than their container */
+        height: auto; /* Maintain aspect ratio */
+        display: block; /* Removes default inline spacing for images */
+    }
+    .gallery-container div {
+        width: calc(50% - 20px); /* Two items per row on medium screens */
+    }
+
+    #gallery h1 {
+        font-size: 2.5em;
+    }
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .get-in-touch,
+    .send-message {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .send-message input,
+    .send-message textarea {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .form-buttons {
+        justify-content: center;
+    }
+
+    .send-btn,
+    .delete-btn {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    img {
+        max-width: 100%; /* Images will never be wider than their container */
+        height: auto; /* Maintain aspect ratio */
+        display: block; /* Removes default inline spacing for images */
+    }
+    .navbar-right {
+        display: none;
+        flex-direction: column;
+        background-color: #004e92;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar-left .logo {
+        height: 40px;
+    }
+
+    .navbar-left p {
+        font-size: 18px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hero-section {
+        height: 500px;
+    }
+
+    .hero-overlay h1 {
+        font-size: 2.5rem;
+    }
+    .about-container {
+        flex-direction: column;
+    }
+
+    .col-left, .col-right {
+        flex-direction: column;
+    }
+
+    .col-left p, .col-right p {
+        order: 1; /* Ensure text appears first */
+        padding: 20px;
+        font-size: 20px;
+        padding-top: 50px;
+        text-align: center;
+    }
+
+    .col-left img, .col-right img {
+        order: 2; /* Ensure image appears second */
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .gallery-container div {
+        width: calc(50% - 15px); /* Keep two items per row for smaller screens */
+    }
+
+    .gallery-container div p {
+        font-size: 1em;
+    }
+
+    .gallery-button {
+        padding: 12px 25px;
+        font-size: 1.1em;
+    }
+    .contact-section h1 {
+        font-size: 2rem;
+    }
+
+    .get-in-touch h2,
+    .send-message h2 {
+        font-size: 1.5rem;
+    }
+
+    .send-message input,
+    .send-message textarea {
+        font-size: 0.85rem;
+    }
+
+    .send-btn,
+    .delete-btn {
+        font-size: 0.85rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    img {
+        max-width: 100%; /* Images will never be wider than their container */
+        height: auto; /* Maintain aspect ratio */
+        display: block; /* Removes default inline spacing for images */
+    }
+    .navbar-left .logo {
+        height: 30px;
+    }
+
+    .navbar-left p {
+        font-size: 16px;
+    }
+
+    .hero-section {
+        height: 400px;
+    }
+
+    .hero-overlay h1 {
+        font-size: 2rem;
+    }
+    .center {
+        font-size: 36px;
+    }
+
+    .col-left p, .col-right p {
+        padding: 15px;
+        font-size: 18px;
+        padding-top: 20px;
+    }
+
+    .col-left img, .col-right img {
+        max-width: 300px;
+        padding: 10px;
+    }
+    .gallery-container div {
+        width: 100%; /* Single column for mobile */
+        margin-bottom: 20px;
+    }
+
+    .gallery-container div p {
+        font-size: 0.9em;
+    }
+
+    #gallery h1 {
+        font-size: 2em;
+    }
+
+    .gallery-button {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+    .contact-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .get-in-touch h2,
+    .send-message h2 {
+        font-size: 1.3rem;
+    }
+
+    .send-message input,
+    .send-message textarea {
+        font-size: 0.75rem;
+    }
+
+    .send-btn,
+    .delete-btn {
+        font-size: 0.8rem;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+    }
+}

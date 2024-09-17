@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="icon" href="/images/favicon.jpg" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #gallery {
+            background: linear-gradient(to bottom right, #e0f7fa, #80deea);
+            padding: 60px 20px;
+            text-align: center;
+        }
+        #gallery h1 {
+            font-size: 3em;
+            color: #333;
+            margin-bottom: 40px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+        .gallery-container div {
+            width: calc(33.333% - 20px);
+            border-radius: 15px;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        .gallery-container div:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+        }
+        .gallery-container div img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px 15px 0 0;
+            cursor: pointer;
+        }
+        .gallery-container div p {
+            padding: 20px;
+            font-size: 1.1em;
+            color: #666;
+            font-weight: 400;
+            margin: 0;
+            text-align: center;
+            background-color: #fff;
+        }
+        .gallery-button {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #007bff;
+            text-decoration: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        /* Fullscreen Styles */
+        .fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            cursor: pointer;
+            display: none;
+        }
+        .fullscreen img {
+            max-width: 100%; /* Allow the image to take the full width */
+            max-height: 100%; /* Allow the image to take the full height */
+            width: auto;
+            height: auto;
+            border-radius: 10px;
+            object-fit: contain; /* Ensure the image fits within the container while maintaining aspect ratio */
+        }
+        /* Responsive Design */
+@media (max-width: 1024px) {
+    #gallery h1 {
+        font-size: 2.5em;
+    }
+
+    .gallery-container div {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    #gallery h1 {
+        font-size: 2em;
+    }
+
+    .gallery-container {
+        padding: 0 10px;
+    }
+
+    .gallery-container div {
+        width: calc(100% - 20px);
+    }
+
+    .gallery-button {
+        padding: 12px 24px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    #gallery h1 {
+        font-size: 1.5em;
+    }
+
+    .gallery-container div {
+        width: calc(100% - 20px);
+    }
+
+    .gallery-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <section id="gallery">
+        <h1>Gallery</h1>
+        <div class="gallery-container">
+            <div>
+                <img src="/images/gallery/gallery1.jpg" alt="Sample Image 1">
+                <p>Description of Image 1</p>
+            </div>
+            <div>
+                <img src="/images/gallery/gallery2.jpg" alt="Sample Image 2">
+                <p>Description of Image 2</p>
+            </div>
+            <div>
+                <img src="/images/gallery/gallery3.jpg" alt="Sample Image 3">
+                <p>Description of Image 3</p>
+            </div>
+            <div>
+                <img src="/images/gallery/gallery4.jpg" alt="Sample Image 4">
+                <p>Description of Image 4</p>
+            </div>
+            <div>
+                <img src="/images/gallery/gallery5.jpg" alt="Sample Image 5">
+                <p>Description of Image 5</p>
+            </div>
+            <div>
+                <img src="/images/gallery/gallery6.jpg" alt="Sample Image 6">
+                <p>Description of Image 6</p>
+            </div>
+            <!-- Add more images here -->
+        </div>
+        <a href="/" class="gallery-button">Back to Home</a>
+    </section>
+    
+    <!-- Fullscreen Modal -->
+    <div class="fullscreen" id="fullscreenModal">
+        <img id="fullscreenImage" src="" alt="Fullscreen Image">
+    </div>
+
+    <script>
+        const images = document.querySelectorAll('.gallery-container img');
+        const fullscreenModal = document.getElementById('fullscreenModal');
+        const fullscreenImage = document.getElementById('fullscreenImage');
+        let currentIndex = 0;
+
+        function openFullscreen(index) {
+            currentIndex = index;
+            fullscreenImage.src = images[index].src;
+            fullscreenModal.style.display = 'flex';
+        }
+
+        function closeFullscreen() {
+            fullscreenModal.style.display = 'none';
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            fullscreenImage.src = images[currentIndex].src;
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            fullscreenImage.src = images[currentIndex].src;
+        }
+
+        // Open fullscreen on image click
+        images.forEach((img, index) => {
+            img.addEventListener('click', () => openFullscreen(index));
+        });
+
+        // Close fullscreen on modal click
+        fullscreenModal.addEventListener('click', closeFullscreen);
+
+        // Handle arrow key navigation
+        document.addEventListener('keydown', (event) => {
+            if (fullscreenModal.style.display === 'flex') {
+                if (event.key === 'ArrowRight') {
+                    nextImage();
+                } else if (event.key === 'ArrowLeft') {
+                    prevImage();
+                } else if (event.key === 'Escape') {
+                    closeFullscreen();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
